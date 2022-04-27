@@ -31,7 +31,7 @@ public class FirstController {
                              @RequestParam(value = "b", required = false) int b,
                              @RequestParam(value = "b", required = false) String action,
                              Model model) {
-        double result = 0.;
+        double result;
         switch (action) {
             case ("addition"):
                 result = a + b;
@@ -46,6 +46,9 @@ public class FirstController {
                 if (b != 0) {
                     result = (double) a / b;
                 } else result = 0;
+                break;
+            default:
+                result = -500;
                 break;
         }
 
